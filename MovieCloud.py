@@ -24,5 +24,6 @@ for g in results2['cast'][:15]:
 
 print("Movie: "+query1)
 print("---Top Actors in the movie---")
+
 for a in actors:
     print("- "+a)
