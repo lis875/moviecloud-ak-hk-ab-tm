@@ -21,4 +21,8 @@ results2 = json.loads(result_credits.text)
 actors = []
 for g in results2['cast'][:15]:
     actors.append(g['name'])
-print(actors)
+
+print("Movie: "+query1)
+print("---Top Actors in the movie---")
+for a in actors:
+    print("- "+a)
