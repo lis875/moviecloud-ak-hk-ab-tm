@@ -4,7 +4,7 @@ import requests
 API_KEY = "68fb82694c5bb73d9bf877ee4613f426"
 BASE_URL = "https://api.themoviedb.org/3"
 
-
+# Function to retrieve movie data based on movie name
 def get_movie_data(movie_name):
     params = {"api_key": API_KEY, "query": movie_name}
     response = requests.get(f"{BASE_URL}/search/movie", params=params)
@@ -16,7 +16,7 @@ def get_movie_data(movie_name):
         return data["results"][0], credits_data["cast"][:10] if credits_data.get("cast") else None
     return None, None
 
-
+# Function to draw movie details and actors using Turtle graphics
 def draw_movie_cloud(movie, actors):
     screen = turtle.Screen()
     screen.bgcolor("white")
@@ -39,7 +39,7 @@ def draw_movie_cloud(movie, actors):
 
     turtle.done()
 
-
+# Main function to execute the program
 def main():
     movie_name = input("Enter the name of the movie: ")
     movie, actors = get_movie_data(movie_name)
